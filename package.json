@@ -26,6 +26,7 @@
     "@types/node": "^20.12.12",
     "@types/sequelize": "^4.28.20",
     "@types/sharp": "^0.32.0",
-    "@types/validator": "^13.11.10"
+    "@types/validator": "^13.11.10",
+    "ts-node": "^10.9.2"
   }
 }

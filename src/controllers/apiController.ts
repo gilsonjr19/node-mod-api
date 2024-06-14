@@ -88,9 +88,11 @@ export const uploadFile = async (req: Request, res: Response) => {
     if (req.file) {
         const filename = `${req.file.filename}.jpeg`;
 
-        await sharp(req.file.path).resize(200).toFormat('jpeg').toFile(`./public/media/${filename}`);
-       
+        const file = await sharp(req.file.path).resize(200).toFormat('jpeg').toFile(`./public/media/${filename}`);
+
         await unlink(req.file.path);
+        console.log(req.file.path);
+
         res.json({ image: `${filename}` });
     } else {
         res.status(400);
